@@ -19,8 +19,8 @@ import service.ClienteService;
 public class ClienteRestController {
 	
 	@Autowired
-	private ClienteService clienteService; //pegarei os métodos da ClienteService que representa um strategy
-	
+	private ClienteService clienteService; //usarei a instância de ClienteService sob a variável clienteService sem precisar dar um NEW. estou injetando essa dependecia do spring
+										//só assim conseguirei usar os métodos da classe ClienteService normalmente aqui
 	@GetMapping
 	public ResponseEntity<Iterable<Cliente>> buscarTodos() {
 		return ResponseEntity.ok(clienteService.buscarTodos());
